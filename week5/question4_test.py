@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:9696/predict'
+url = 'http://localhost:9696/churn'
 
 
 client = {"job": "student", "duration": 280, "poutcome": "failure"}
