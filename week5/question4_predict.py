@@ -13,10 +13,10 @@ def load(filename: str):
 dv = load('./dv.bin')
 model = load('./model1.bin')
 
-app = Flask('churn')
+app = Flask('predict')
 
 
-@app.route('/churn', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     customer = request.get_json()
  
@@ -25,8 +25,8 @@ def predict():
     churn = y_pred >= 0.5
  
     result = {
-        'churn_probability': float(y_pred),
-        'churn': bool(churn)
+        'credit_probability': float(y_pred),
+        'credit': bool(churn)
     }
  
     return jsonify(result) 
