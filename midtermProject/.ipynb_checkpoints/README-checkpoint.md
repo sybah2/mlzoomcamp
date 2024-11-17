@@ -21,11 +21,11 @@ The used for the analysis was collected from 3 European countries, France, Spain
 - churn:	`Does this customer churned (1: Yes, 0: No)`
 
 ### Folder Struture and content
-The `data` folder contain the data used for the analysis and contains `bank_churn_data.csv`
-`notebook.ipynb` contains the exploratory data analysis (EDA), training diffrent models and their tunning
-`final_model_training.ipynb` contains the final model training
-`train.py` is the python script thata does the training of the model
-`predict.py` is use for the predicting the potential of a customer churning
+- The `data` folder contain the data used for the analysis and contains `bank_churn_data.csv`
+- `notebook.ipynb` contains the exploratory data analysis (EDA), training diffrent models and their tunning
+- `final_model_training.ipynb` contains the final model training
+- `train.py` is the python script thata does the training of the model
+- `predict.py` is use for the predicting the potential of a customer churning
 
 
 ### How to run the classification
