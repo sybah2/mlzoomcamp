@@ -23,7 +23,7 @@ The used for the analysis was collected from 3 European countries, France, Spain
 ### Folder Struture and content
 - The `data` folder contain the data used for the analysis and contains `bank_churn_data.csv`
 - `notebook.ipynb` contains the exploratory data analysis (EDA), training diffrent models and their tunning
-- `final_model_training.ipynb` contains the final model training
+- `final_model.ipynb` contains the final model training
 - `train.py` is the python script thata does the training of the model
 - `predict.py` is use for the predicting the potential of a customer churning
 
