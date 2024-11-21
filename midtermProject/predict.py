@@ -9,8 +9,6 @@ import xgboost as xgb
 
 model_file = 'xboos_model.bin'
 
-#model = load('./xboos_model.bin')
-
 with open(model_file, 'rb') as f_in:
     dv, model = pickle.load(f_in)
 
