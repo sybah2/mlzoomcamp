@@ -3,16 +3,15 @@ import pickle
 from flask import Flask
 from flask import request
 from flask import jsonify
+import pandas as pd
+import xgboost as xgb
 
 
+model_file = 'xboos_model.bin'
 
-def load(filename: str):
-    with open(filename, 'rb') as f_in:
-        return pickle.load(f_in)
+with open(model_file, 'rb') as f_in:
+    dv, model = pickle.load(f_in)
 
-
-
-model = load('./xboos_model.bin')
 
 app = Flask('predict')
 
@@ -21,7 +20,8 @@ app = Flask('predict')
 
 def predict():
     customer = request.get_json()
-    X  = customer
+    X  = pd.json_normalize([customer])
+    X  = X
     X_try_dict = X.to_dict(orient='records')
     X_try = dv.transform(X_try_dict)
     feature_names = list(dv.get_feature_names_out())
@@ -33,8 +33,8 @@ def predict():
     churn = y_pred >= 0.5
  
     result = {
-        'credit_probability': float(y_pred),
-        'credit': bool(churn)
+        'Proberbility of churn': round(float(y_pred),3),
+        'Churn': bool(churn)
     }
  
     return jsonify(result) 
@@ -42,6 +42,7 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=9696)
+
 
 
 
