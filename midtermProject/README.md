@@ -67,4 +67,6 @@ Details to be changed/updated to reflect customer details
  `
 
 - Check the customer churning probability
-python check_score.py
+`python check_score.py`
+
+After runing this script the printed output will give probability of a client churning and weather a promotional email should be sent or not. 
