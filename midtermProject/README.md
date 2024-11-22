@@ -21,12 +21,17 @@ The used for the analysis was collected from 3 European countries, France, Spain
 - churn:	`Does this customer churned (1: Yes, 0: No)`
 
 ### Folder Struture and content
+The imporant folders and file are detailled below
 - The `data` folder contain the data used for the analysis and contains `bank_churn_data.csv`
 - `notebook.ipynb` contains the exploratory data analysis (EDA), training diffrent models and their tunning
 - `final_model.ipynb` contains the final model training
 - `train.py` is the python script thata does the training of the model
 - `predict.py` is use for the predicting the potential of a customer churning
-
+- `Dockerfile` is docker file for building the docker container needed for the churning services
+- `Pipfile.lock` and `Pipfile` contain the pipenv specification for the packages needed to run the churning services
+- `predict.py` script containing the functions for predictions
+- `xboos_model.bin` the final model needed for prediction
+- `check_score.py` The script for checking the probability of a bank client churning. `NB: this need to be updated with the new client details.` 
 
 ### How to run the classification
 - Download and install Docker
