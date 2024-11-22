@@ -29,4 +29,9 @@ The used for the analysis was collected from 3 European countries, France, Spain
 
 
 ### How to run the classification
+To run the project user need to have docker install in their local machine. The isntallation instructions can me found [here](https://docs.docker.com/get-started/get-docker/) 
 
+docker build -t zoomcamp-test .
+
+
+docker run -it --rm -p 9696:9696 zoomcamp-test
