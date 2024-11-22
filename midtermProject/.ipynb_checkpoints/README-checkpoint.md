@@ -1,6 +1,6 @@
 ## Machine learning zoomcamp 2024 Midterm project
 
-![T](images/bankNote.jpg)
+![T](images/BankExit.png)
 
 ### Summary
 This project is the midterm project for machine learning zoomcamp 2024. Banks provide services such credits cards to customers and would like for customers to stay for the long term. However often time customers leave the bank (`Churn`) and join other banks. It is important that banks analyse customers who could potentially churn and give the better offers to stay with the Bank.
