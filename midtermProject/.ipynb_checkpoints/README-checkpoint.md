@@ -43,9 +43,12 @@ Once succesfully docker image build do the churning service can be started using
 
 
 - Update customer details
+
 One the churn service is running, open the check_score.py and change client (customer) details below to the clients and save the python script.
 
 Details to be changed/updated to reflect customer details
+
+
 `client = {'credit_score': 626,
  'country': 'France',
  'gender': 'Female',
