@@ -56,9 +56,9 @@ One the diamond_price_service is running, open the check_score.py and change dia
 
 Details of the diamond can be updated to predict its price
 
-`client = {
-'carat': 1.12, \
- 'cut': 3, \
+`diamond = {
+'carat': 1.12,
+ 'cut': 3,
  'color': 4,
  'clarity': 1,
  'depth': 60.5,
