@@ -22,7 +22,36 @@ The decription of the diamond can be found below
 - z: `depth in mm`
 
 
-### Folder Struture and content
+### Folder Struture and their content
+The imporant folders and file are detailled below
+- The `data` folder contain the data used for the analysis and contains `bank_churn_data.csv`
+- `notebook.ipynb` contains the exploratory data analysis (EDA), training diffrent models and their tunning
+- `final_model.ipynb` contains the final model training
+- `train.py` is the python script thata does the training of the model
+- `predict.py` is use for the predicting the potential of a customer churning
+- `Dockerfile` is docker file for building the docker container needed for the churning services
+- `Pipfile.lock` and `Pipfile` contain the pipenv specification for the packages needed to run the churning services
+- `predict.py` script containing the functions for predictions
+- `final_model.bin` the final model needed for prediction
+- `check_price.py` The script for checking the price of a diamond based on its details. `NB: this need to be updated with the new client details.` 
 
 
 ### How to predict the price of a diamond
+- Download and install Docker
+To run this project, user need to istall docker for portability and reproducibility. The docker image contain all the packages needed for the project. The isntallation instructions can me found [here](https://docs.docker.com/get-started/get-docker/)
+
+- Build the docker image
+Following the downlaod and installation of docker, run the command below to build the docker image.
+
+`docker build --no-cache -t diamond_price_service .`
+
+- Lunch the churning service
+Once succesfully docker image build do the churning service can be started using the command below
+`docker run -it --rm -p 9696:9696 diamond_price_service`
+
+
+- Update diamond specifications
+
+One the diamond_price_service is running, open the check_score.py and change diamond details below to reflect the diamond and save the python script.
+
+Details of the diamond can be updated to predict its price
