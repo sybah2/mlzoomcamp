@@ -15,4 +15,4 @@ client = {'carat': 1.12,
 
 price = requests.post(url, json=client).json()
 
-print(score)
+print(price)

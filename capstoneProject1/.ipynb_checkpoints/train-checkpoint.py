@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 print("Now loading the data for the training of the model")
 
 ## Loading the data for the training and modifying the needed columns
-data = pd.read_csv("diamonds.csv")
+data = pd.read_csv("data/diamonds.csv")
 
 
 print("Processing and formatting of the data")
@@ -81,10 +81,12 @@ print("Training the model")
 model = train(df_test, y_train)
 
 print("Checking model performation on training set")
-validation(model, df_train,y_train)
+train_score = validation(model, df_train,y_train)
+print(f"The negative mean standard error for training is {train_score}")
 
 print("Checking model performance on the validation set")
-validation(model, df_val,y_val)
+val_score = validation(model, df_val,y_val)
+print(f"The negative mean standard error for validation is {val_score}")
 
 print("Saving the final model")
 output_file = 'final_model.bin'
