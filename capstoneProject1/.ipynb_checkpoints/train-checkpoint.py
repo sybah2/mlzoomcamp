@@ -1,7 +1,7 @@
 ## importing the needed libaries
+print("Importing the needed libraries")
 import numpy as np
 import pandas as pd
-
 
 from sklearn.model_selection import train_test_split
 
@@ -19,10 +19,13 @@ import pickle
 import warnings
 warnings.filterwarnings('ignore')
 
+print("Now loading the data for the training of the model")
+
 ## Loading the data for the training and modifying the needed columns
 data = pd.read_csv("diamonds.csv")
 
 
+print("Processing and formatting of the data")
 data.columns = data.columns.str.lower().str.replace(' ', '_')
 
 string_columns = list(data.dtypes[data.dtypes == 'object'].index)
@@ -42,6 +45,7 @@ data1['clarity'] = data1['clarity'].map({'i1':0, 'si2':1, 'si1':2, 'vs2':3, 'vs1
 
 ## Splitting the data into training, test and validation for the training
 
+print("Splitting the data into training, test and validation sets")
 df_full_train, df_test = train_test_split(data1, test_size=0.2, random_state=1)
 df_train, df_val = train_test_split(df_full_train, test_size=0.25, random_state=1)
 
@@ -73,13 +77,16 @@ def validation(model, df, y):
     cv_score = cross_val_score(model, df,y,scoring="neg_root_mean_squared_error", cv=10)
     return cv_score.mean() 
 
-
+print("Training the model")
 model = train(df_test, y_train)
 
+print("Checking model performation on training set")
 validation(model, df_train,y_train)
 
+print("Checking model performance on the validation set")
 validation(model, df_val,y_val)
 
+print("Saving the final model")
 output_file = 'final_model.bin'
 with open(output_file, 'wb') as f_out:
     pickle.dump((model), f_out)
