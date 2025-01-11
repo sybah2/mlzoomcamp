@@ -55,3 +55,20 @@ Once succesfully docker image build do the churning service can be started using
 One the diamond_price_service is running, open the check_score.py and change diamond details below to reflect the diamond and save the python script.
 
 Details of the diamond can be updated to predict its price
+
+`client = {
+'carat': 1.12,
+ 'cut': 3,
+ 'color': 4,
+ 'clarity': 1,
+ 'depth': 60.5,
+ 'table': 59.0,
+ 'x': 6.79,
+ 'y': 6.73,
+ 'z': 4.09}
+ `
+
+- Determine the price of a diamond
+`python check_price.py`
+
+After runing this script the printed output will give probability of a client churning and weather a promotional email should be sent or not. 

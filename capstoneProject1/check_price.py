@@ -3,7 +3,7 @@ import requests
 url = 'http://localhost:9696/predict'
 
 
-client = {'carat': 1.12,
+diamond = {'carat': 1.12,
  'cut': 3,
  'color': 4,
  'clarity': 1,
@@ -13,6 +13,6 @@ client = {'carat': 1.12,
  'y': 6.73,
  'z': 4.09}
 
-price = requests.post(url, json=client).json()
+price = requests.post(url, json=diamond).json()
 
 print(price)
