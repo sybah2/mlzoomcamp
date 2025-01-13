@@ -15,4 +15,4 @@ diamond = {'carat': 1.12,
 
 price = requests.post(url, json=diamond).json()
 
-print(price)
+print(f"The price of a diamond with these features is:\n${price}")
